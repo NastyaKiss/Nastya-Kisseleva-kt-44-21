@@ -1,8 +1,12 @@
+using KiselevaAnastasiaKt_44_21.DataBase;
+using Microsoft.EntityFrameworkCore;
 using NLog;
 using NLog.Web;
+using System.Reflection.PortableExecutable;
 var builder = WebApplication.CreateBuilder(args);
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+
 try
 { builder.Logging.ClearProviders();
     builder.Host.UseNLog();
@@ -14,6 +18,9 @@ try
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+
+    builder.Services.AddDbContext<StudentDbContext>(options =>
+       options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     var app = builder.Build();
 
