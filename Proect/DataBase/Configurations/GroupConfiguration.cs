@@ -1,10 +1,10 @@
-﻿using KiselevaAnastasiaKt_44_21.Models;
+﻿using Proect.Models;
 using Proect.DataBase.Helpers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace KiselevaAnastasiaKt_44_21.Database.Configurations
+namespace Proect.Database.Configurations
 {
     public class GroupConfiguration : IEntityTypeConfiguration<Group>
     {

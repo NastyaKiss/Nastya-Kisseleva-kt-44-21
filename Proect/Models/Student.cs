@@ -1,4 +1,4 @@
-﻿namespace KiselevaAnastasiaKt_44_21.Models
+﻿namespace Proect.Models
 {
     public class Student
     {

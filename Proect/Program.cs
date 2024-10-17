@@ -21,6 +21,7 @@ try
 
     builder.Services.AddDbContext<StudentDbContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    
 
     var app = builder.Build();
 
